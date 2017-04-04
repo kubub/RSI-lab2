@@ -19,13 +19,16 @@ public class CalcObject2KImpl extends UnicastRemoteObject
         int primeCount = resultTypeK.getResult()[0];
         int startNumber = resultTypeK.getResult()[1];
 
-        for(int curValueToCheck = startNumber; curValueToCheck < max; curValueToCheck++){
+        System.out.println("startnumber: " + startNumber);
+
+        for(int curValueToCheck = startNumber; curValueToCheck <= max; curValueToCheck++){
             for(int i = 2; i < curValueToCheck; i++){
                 if((curValueToCheck % i) == 0)
                     break;
                 else if(i == curValueToCheck - 1)
                     primeCount++;
             }
+            System.out.println(curValueToCheck);
         }
 
         wynik.setResult(primeCount, max);

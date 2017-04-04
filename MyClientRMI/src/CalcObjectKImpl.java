@@ -2,7 +2,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 /**
- * Created by Sir Kubub on 2017-04-01.
+ * Created by Jakub Mocny on 2017-04-01.
  */
 public class CalcObjectKImpl extends UnicastRemoteObject
         implements CalcObjectK
@@ -16,8 +16,11 @@ public class CalcObjectKImpl extends UnicastRemoteObject
         ResultTypeK wynik = new ResultTypeK();
         min = inParam.getMin();
         max = inParam.getMax();
-        int limit = max/2;
+        int limit = ((max-min)/2)+min;
         int primeCount = 0;
+
+        if(min == 2)
+            primeCount++;
 
         for(int curValueToCheck = min; curValueToCheck < limit; curValueToCheck++){
             for(int i = 2; i < curValueToCheck; i++){

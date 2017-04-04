@@ -10,6 +10,7 @@ public class ResultTypeK implements Serializable {
     public int[] getResult(){return result;}
 
     public void setResult(int primeCount, int value){
+        result = new int[2];
         result[0] = primeCount;
         result[1] = value;
     }
