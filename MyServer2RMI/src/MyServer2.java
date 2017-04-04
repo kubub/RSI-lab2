@@ -5,7 +5,7 @@ import java.rmi.registry.Registry;
 /**
  * Created by Sir Kubub on 2017-03-28.
  */
-public class MyServer
+public class MyServer2
 {
     public static void main(String[] args)
     {
@@ -18,7 +18,7 @@ public class MyServer
             );
 
         try {
-            Registry reg = LocateRegistry.createRegistry(1099);
+            Registry reg = LocateRegistry.createRegistry(2000);
         } catch (RemoteException e1) {
             e1.printStackTrace();
         }
@@ -29,7 +29,7 @@ public class MyServer
             //java.rmi.Naming.rebind(args[0], implObiektu);
             //java.rmi.Naming.rebind(args[1], implObiektu2);
 
-            CalcObjectK implObiektu = new CalcObjectKImpl();
+            CalcObject2K implObiektu = new CalcObject2KImpl();
             java.rmi.Naming.rebind(args[0], implObiektu);
 
             System.out.println("Server is registered now :-)");
